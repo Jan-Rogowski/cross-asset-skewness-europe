@@ -25,3 +25,11 @@ data/raw/
 # data/processed/
 # Project sandbox notebook
 Skewness.ipynb
+# Generated data
+data/processed/
+
+# Outputs (plots, figures)
+outputs/
+
+# Jupyter
+.ipynb_checkpoints/
