@@ -11,36 +11,52 @@ represent independent sources of risk and return.
 
 The analysis focuses on European markets and covers the following asset classes:
 
-Equities
+- **Equities**
+- **Foreign Exchange (FX)**
+- **Government Bonds**
+- **Commodities**
 
-Foreign Exchange (FX)
-
-Government Bonds
-
-Commodities
 
 All results are generated using monthly data and skewness-based long–short strategies.
 
 Project Structure
+## Project Structure
+
+```text
 src/
-├── data_download_*.py        # Data acquisition scripts
-├── skewness_*.py             # Rolling skewness computation
-├── portfolios_*.py           # Long–Short portfolio construction
-├── regression_*.py           # OLS regressions vs market factors
-├── analysis_*.py             # Performance statistics and summaries
+├── data_download.py            # Data acquisition
+├── data_download_fx.py
+├── data_download_bonds_fred.py
+├── data_download_commodities.py
+├── skewness.py                 # Rolling skewness computation
+├── skewness_fx.py
+├── skewness_bonds.py
+├── skewness_commodities.py
+├── portfolios.py               # Long–Short portfolio construction
+├── portfolios_fx.py
+├── portfolios_bonds.py
+├── portfolios_commodities.py
+├── regression_equity.py        # OLS regressions
+├── regression_bonds.py
+├── analysis_equity.py          # Performance statistics
+├── analysis_fx.py
+├── analysis_bonds.py
+├── analysis_commodities.py
 
 data/
-├── raw/                       # Raw downloaded data
-├── processed/                # Processed returns, signals, portfolios
+├── raw/                        # Raw downloaded data
+├── processed/                  # Processed returns, signals, portfolios
 
 requirements.txt
 README.md
-Environment Setup
+
+## Environment Setup
 
 Create and activate a Python environment (recommended: conda), then install dependencies:
-pip install -r requirements.txt
-Replicating the Analysis
 
+pip install -r requirements.txt
+
+## Replicating the Analysis
 The empirical results can be reproduced by running the scripts in the following order.
 
 1. Data Download
@@ -70,7 +86,7 @@ python src/analysis_commodities.py
 python src/regression_equity.py
 python src/regression_bonds.py
 
-Methodological Overview
+## Methodological Overview
 
 Skewness is computed as 12-month rolling sample skewness of monthly returns.
 
@@ -82,10 +98,11 @@ Performance is evaluated using annualized mean returns, volatility, Sharpe ratio
 
 Linear regressions relate skewness portfolio returns to market benchmarks.
 
-Notes
+## Notes
 
 The repository is designed for full reproducibility of the empirical results reported in the thesis.
 
 Intermediate files are saved to data/processed/.
 
 Jupyter notebooks used for exploratory analysis are intentionally excluded from the repository.
+
