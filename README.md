@@ -49,43 +49,23 @@ data/
 requirements.txt
 README.md
 ```
+## Master Notebook (Full Replication)
 
-## Environment Setup
+The full analysis can be reproduced by running the master notebook:
 
-Create and activate a Python environment (recommended: conda), then install dependencies:
-```
-pip install -r requirements.txt
-```
-## Replicating the Analysis
-The empirical results can be reproduced by running the scripts in the following order.
-```
-1. Data Download
-python src/data_download.py
-python src/data_download_fx.py
-python src/data_download_bonds_fred.py
-python src/data_download_commodities.py
-2. Rolling Skewness Estimation (12M)
-python src/skewness.py
-python src/skewness_fx.py
-python src/skewness_bonds.py
-python src/skewness_commodities.py
+- `Master.ipynb`
 
-3. Long–Short Portfolio Construction
-python src/portfolios.py
-python src/portfolios_fx.py
-python src/portfolios_bonds.py
-python src/portfolios_commodities.py
+### Recommended run
+ Create/activate the Python environment and install dependencies:
+   ```bash
+   pip install -r requirements.txt
+  ```
+### Notes
+- The notebook downloads raw data and generates intermediate files in `data/processed/`.
+- Bond data requires a FRED API key (not included in the repository).  
+  When prompted in the notebook, paste your key (or set it as an environment variable `FRED_API_KEY`).
 
-4. Performance Analysis
-python src/analysis_equity.py
-python src/analysis_fx.py
-python src/analysis_bonds.py
-python src/analysis_commodities.py
 
-5. Regression Analysis
-python src/regression_equity.py
-python src/regression_bonds.py
-```
 ## Methodological Overview
 
 Skewness is computed as 12-month rolling sample skewness of monthly returns.
@@ -105,5 +85,6 @@ The repository is designed for full reproducibility of the empirical results rep
 Intermediate files are saved to data/processed/.
 
 Jupyter notebooks used for exploratory analysis are intentionally excluded from the repository.
+
 
 
