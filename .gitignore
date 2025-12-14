@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+venv/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data: raw data should not be tracked
+data/raw/
+
+# Uncomment ONLY if you do NOT want processed CSVs in repo
+# data/processed/
+# Project sandbox notebook
+Skewness.ipynb
