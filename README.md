@@ -1,7 +1,7 @@
 ## Cross-Asset Skewness in European Markets
 
-This repository contains the complete codebase used in the empirical analysis conducted in the thesis
-“Cross-Asset Skewness in European Markets.”
+This repository contains the complete codebase used in the empirical analysis conducted for a university project about
+cross-asset skewness in european markets.
 
 The project investigates whether skewness-based risk premia:
 
@@ -85,6 +85,7 @@ The repository is designed for full reproducibility of the empirical results rep
 Intermediate files are saved to data/processed/.
 
 Jupyter notebooks used for exploratory analysis are intentionally excluded from the repository.
+
 
 
 
